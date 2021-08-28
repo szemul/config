@@ -78,4 +78,16 @@ jobs:
       run: composer install --prefer-dist --no-progress
 
     - name: PHPUnit
-      run: vendor/bin/phpunit
+      run: vendor/bin/phpunit --coverage-clover coverage.xml
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        directory: ./coverage/reports/
+        env_vars: OS,PHP
+        fail_ci_if_error: true
+        files: ./coverage1.xml,./coverage2.xml
+        flags: unittests
+        name: codecov-umbrella
+        path_to_write_report: ./coverage/codecov_report.txt
+        verbose: true
