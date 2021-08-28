@@ -78,13 +78,7 @@ jobs:
       run: composer install --prefer-dist --no-progress
 
     - name: PHPUnit
-      run: vendor/bin/phpunit --coverage-clover coverage.xml
-
-    - name: pwd
-      run: pwd
-
-    - name: ls
-      run: ls
+      run: XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover coverage.xml
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
