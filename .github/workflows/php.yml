@@ -56,8 +56,8 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: PHPStan analysys
-      run: vendor/bin/phpstan analyze --no-progress --memory-limit=-1 src
+    - name: PHPStan analysis
+      run: vendor/bin/phpstan analyze --no-progress --memory-limit=-1 src tests
 
   phpunit:
     runs-on: ubuntu-latest
