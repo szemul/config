@@ -88,9 +88,6 @@ class Config implements ConfigInterface
         return $this;
     }
 
-    /**
-     * @return array<string,mixed>
-     */
     public function toArray(): array
     {
         return $this->configData;

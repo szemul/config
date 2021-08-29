@@ -34,4 +34,9 @@ interface ConfigInterface
      * @param array<string,mixed> $data
      */
     public function setArray(array $data): static;
+
+    /**
+     * @return array<string,mixed>
+     */
+    public function toArray(): array;
 }
